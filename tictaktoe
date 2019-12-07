@@ -1,0 +1,72 @@
+def vamsi():
+    print("enter next position")
+    p=int(input())
+    m.append(p)
+    q.append(p)
+    c=0
+    mm=0
+    for j in ff:
+        jj=j[:]
+        for k in range(len(m)):
+            if(m[k] in j):
+                c+=1
+        if(c==2):
+            mm=1
+            for ll in (m):
+                if(ll in jj):
+                    jj.remove(ll)
+            if(jj[0] not in n):
+                print("computer choosen position as",jj[0])
+                n.append(jj[0])
+                q.append(jj[0])
+        c=0
+    if(mm==0):
+        king()
+    print(m,n,q)
+    if(len(q)!=9):
+        vamsi()
+    if(len(q)==9):
+        print("its a draw match")
+def king():
+    ttt=rand.randint(0,8)
+    if(ttt not in q):
+        print("computer choosen position as",ttt)
+        q.append(ttt)
+        n.append(ttt)
+    else:
+        king()    
+import random as rand
+import numpy as np
+print("enter who wants to play 1st:")
+print("0 for computer wants to play 1st or")
+print(" 1 for opponent wants to play 1st")
+ff=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]]
+p=int(input())
+m,n,q=[],[],[]
+if(p==1):
+    print("remember u should enter position form 0 to 8")
+    print("enter position")
+    r=int(input())
+    m.append(r)
+    q.append(r)
+    if(r!=4):
+        print("computer choosen the position as 4")
+        n.append(4)
+        q.append(4)
+    else:
+        t=rand.randint(0,8)
+        if(t!=4):
+            print("computer choosen the position as",t)
+            n.append(t)
+            q.append(t)
+        else:
+            print("computer choosen the position as 1",)
+            n.append(1)
+            q.append(1)
+    vamsi()
+    print(m,n,q)
+elif(p==0):
+    print("remember u should enter position form 0 to 8")
+    print("computer chooses 1st position as 0")
+else:
+    print("enter either 1 or 0")
